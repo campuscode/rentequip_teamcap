@@ -6,5 +6,5 @@
     <th>Endereço</th>
   </tr>
   <%= render @contracts if @contracts %>
-  <%= render partial: 'layouts/no_data', locals: { model: Contract } if @contracts.blank? %>
+  <%= render partial: 'no_data', locals: { model: Contract, columns: 4 } if @contracts.blank? %>
 </table>
