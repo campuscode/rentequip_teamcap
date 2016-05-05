@@ -16,9 +16,11 @@ class ContractsController < ApplicationController
     @contracts = Contract.all
   end
 
-private
+  private
+
   def contract_params
     params.require(:contract)
-      .permit(:customer, :started_at, :finished_at, :price, :equipment, :address, :contact)
+          .permit(:customer, :started_at, :finished_at, :price, :equipment,
+                  :address, :contact)
   end
 end

@@ -6,7 +6,7 @@
       contract = Contract.new(customer: 'Diego',
                               started_at: Time.zone.today,
                               finished_at: Time.zone.today + 30.days,
-                              price: "R$5355",
+                              price: 'R$ 5355',
                               equipment: 'Furadeira',
                               address: 'Rua alameda santos 1293',
                               contact: 'Zé')
@@ -29,9 +29,5 @@
       expect(page).to have_content contract.equipment
       expect(page).to have_content contract.address
       expect(page).to have_content contract.contact
-
-
-
-
     end
   end
