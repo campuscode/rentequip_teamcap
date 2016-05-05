@@ -1,0 +1,13 @@
+<h1>Lista de Equipamentos</h1>
+<table class="table table-striped">
+  <tr>
+    <th>Nome</th>
+    <th>Preço</th>
+  </tr>
+  <% @equipment.each do |e| %>
+    <tr>
+      <td><%= e.name %></td>
+      <td><%= e.price %></td>
+    </tr>
+  <% end %>
+</table>
