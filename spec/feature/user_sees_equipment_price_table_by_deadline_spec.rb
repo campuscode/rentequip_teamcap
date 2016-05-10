@@ -1,13 +1,10 @@
 feature 'User sees equipment price table by deadline' do
-  scenario 'one day' do
-    trator    = Price.create(equipment: 'Trator',
-                             deadline: 1,
-                             price: '1000.00'
-                            )
-    furadeira = Price.create(equipment: 'Furadeira',
-                             deadline: 1,
-                             price: '200.00'
-                            )
+  scenario 'successfully' do
+    trator    = create(:equipment, name: 'Trator')
+    furadeira = create(:equipment, name: 'Furadeira')
+
+    trator_price    = create(:price, equipment: trator)
+    furadeira_price = create(:price, equipment: furadeira)
 
     visit prices_path
 
@@ -16,38 +13,18 @@ feature 'User sees equipment price table by deadline' do
     end
 
     within('table') do
-      expect(page).to have_content(trator.equipment)
-      expect(page).to have_content(trator.deadline)
-      expect(page).to have_content(trator.amount)
-      expect(page).to have_content(furadeira.equipment)
-      expect(page).to have_content(furadeira.deadline)
-      expect(page).to have_content(furadeira.amount)
+      expect(page).to have_content(trator_price.equipment.name)
+      expect(page).to have_content(trator_price.deadline)
+      expect(page).to have_content(trator_price.amount)
+      expect(page).to have_content(furadeira_price.equipment.name)
+      expect(page).to have_content(furadeira_price.deadline)
+      expect(page).to have_content(furadeira_price.amount)
     end
   end
 
-  scenario 'many days' do
-    trator    = Price.create(equipment: 'Trator',
-                             deadline: 1,
-                             price: '1000.00'
-                            )
-    furadeira = Price.create(equipment: 'Furadeira',
-                             deadline: 1,
-                             price: '200.00'
-                            )
-
+  scenario 'dont see any price' do
     visit prices_path
 
-    within('.prices h1') do
-      expect(page).to have_content('Tabela de Preços')
-    end
-
-    within('table') do
-      expect(page).to have_content(trator.equipment)
-      expect(page).to have_content(trator.deadline)
-      expect(page).to have_content(trator.amount)
-      expect(page).to have_content(furadeira.equipment)
-      expect(page).to have_content(furadeira.deadline)
-      expect(page).to have_content(furadeira.amount)
-    end
+    expect(page).to have_content('Nenhum Preço cadastrado.')
   end
 end

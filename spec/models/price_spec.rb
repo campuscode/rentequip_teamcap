@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Price, type: :model do
   it '#amount' do
-    price = Price.create(equipment: 'Tratoir', deadline: 10, price: '1000.00')
+    price = FactoryGirl.create(:price)
 
-    expect(price.amount).to eq(price.deadline * price.price)
+    expect(price.amount).to eq(price.deadline * price.value)
   end
 end

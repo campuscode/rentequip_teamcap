@@ -2,13 +2,7 @@ require 'rails_helper'
 
 feature 'user create contracts' do
   scenario 'successfully' do
-    contract = Contract.new(customer: 'Diego',
-                            started_at: Time.zone.today,
-                            finished_at: Time.zone.today + 30.days,
-                            price: 'R$ 5355',
-                            equipment: 'Furadeira',
-                            address: 'Rua alameda santos 1293',
-                            contact: 'Zé')
+    contract = build(:contract)
     visit new_contract_path
 
     fill_in 'Customer',      with: contract.customer

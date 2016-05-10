@@ -2,9 +2,9 @@ require 'rails_helper'
 
 feature 'user view equipment list' do
   scenario 'successfully' do
-    equipment = Equipment.create(name: 'Furadeira', price: 'R$200,00')
+    equipment = create(:equipment)
 
-    equipment2 = Equipment.create(name: 'Betoneira', price: 'R$2000,00')
+    equipment2 = create(:equipment, name: 'Furadeira', price: 'R$200,00')
 
     visit equipment_index_path
 
@@ -15,7 +15,7 @@ feature 'user view equipment list' do
   end
 
   scenario 'user view equipment detail' do
-    equipment = Equipment.create(name: 'Furadeira', price: 'R$200,00')
+    equipment = create(:equipment)
 
     visit equipment_path equipment
 

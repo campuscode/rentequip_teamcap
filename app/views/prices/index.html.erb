@@ -7,5 +7,6 @@
       <th>Valor</th>
     </tr>
     <%= render @prices if @prices %>
+    <%= render partial: 'no_data', locals: { model: 'Preço', columns: 3 } if @prices.blank? %>
   </table>
 </div>

@@ -1,4 +1,5 @@
-<table class='table table-striped  table-bordered table-hover'>
+<h1>Contratos</h1>
+<table class='table table-striped table-bordered table-hover'>
   <tr>
     <th>Cliente</th>
     <th>Início</th>
@@ -7,5 +8,5 @@
     <th>Endereço</th>
   </tr>
   <%= render @contracts if @contracts %>
-  <%= render partial: 'no_data', locals: { model: Contract, columns: 4 } if @contracts.blank? %>
+  <%= render partial: 'no_data', locals: { model: 'Contrato', columns: 5 } if @contracts.blank? %>
 </table>

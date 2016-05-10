@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :price do
-    equipment 'A Equipment'
+    association :equipment
     deadline 1
-    price 1.5
+    value 1.5
   end
 end

@@ -1,5 +1,7 @@
 class Price < ActiveRecord::Base
+  belongs_to :equipment
+
   def amount
-    price * deadline
+    value * deadline
   end
 end

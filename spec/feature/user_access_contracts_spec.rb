@@ -2,9 +2,7 @@ require 'rails_helper'
 
 feature 'User access contracts' do
   scenario 'successfully' do
-    contract = Contract.create(started_at: Time.zone.today,
-                               finished_at: Time.zone.today + 90.days
-                              )
+    contract = create(:contract)
 
     visit contracts_path
 
@@ -14,11 +12,7 @@ feature 'User access contracts' do
 
   scenario 'see all contracts' do
     contracts = []
-    3.times do
-      contracts << Contract.create(started_at: Time.zone.today,
-                                   finished_at: Time.zone.today + 90.days
-                                  )
-    end
+    3.times { contracts << create(:contract) }
 
     visit contracts_path
     expect(page).to have_content(contracts[0].started_at.strftime('%d/%m/%Y'))
@@ -29,6 +23,6 @@ feature 'User access contracts' do
   scenario 'dont see contracts' do
     visit contracts_path
 
-    expect(page).to have_content('Nenhum Contract cadastrado.')
+    expect(page).to have_content('Nenhum Contrato cadastrado.')
   end
 end
