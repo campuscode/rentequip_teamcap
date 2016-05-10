@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'User access contracts' do
   scenario 'successfully' do
-
     contract = create(:contract)
 
     visit contracts_path

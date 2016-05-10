@@ -2,16 +2,10 @@ require 'rails_helper'
 
 feature 'user create contracts' do
   scenario 'successfully' do
-    equipment1 = Equipment.create(name: 'Furadeira', price: 'R$200,00')
-    equipment2 = Equipment.create(name: 'Betoneira', price: 'R$2100,00')
+    equipment1 = create(:equipment)
+    equipment2 = create(:equipment, name: 'Betoneira')
 
-    contract = Contract.new(customer: 'Diego',
-                            started_at: Time.zone.today,
-                            finished_at: Time.zone.today + 30.days,
-                            price: 'R$ 5355',
-                            equipment: [equipment1, equipment2],
-                            address: 'Rua alameda santos 1293',
-                            contact: 'Zé')
+    contract = build(:contract)
     visit new_contract_path
 
     fill_in 'Customer',      with: contract.customer
@@ -33,5 +27,13 @@ feature 'user create contracts' do
     expect(page).to have_content equipment2.name
     expect(page).to have_content contract.address
     expect(page).to have_content contract.contact
+  end
+
+  scenario 'user create contract and failed' do
+    visit new_contract_path
+
+    click_on 'Criar Contrato'
+
+    expect(page).to have_content 'Todos os campos são obrigatórios'
   end
 end
