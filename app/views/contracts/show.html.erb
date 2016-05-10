@@ -1,7 +1,33 @@
-<%= @contract.customer %>
-<%= @contract.started_at %>
-<%= @contract.finished_at %>
-<%= @contract.price %>
-<%= @contract.equipment %>
-<%= @contract.address %>
-<%= @contract.contact %>
+<h3><%= @contract.customer %> | Contrato nº <%= @contract.id %></h3>
+
+<table class='table table-striped'>
+  <tr>
+    <th width='20%'>Cliente</th>
+    <td><%= @contract.customer %></td>
+  </tr>
+  <tr>
+    <th>Contato</th>
+    <td><%= @contract.contact %></td>
+  </tr>
+  <tr>
+    <th>Início</th>
+    <td><%= date_to_human(@contract.started_at) %></td>
+  </tr>
+  <tr>
+    <th>Fim</th>
+    <td><%= date_to_human(@contract.finished_at) %></td>
+  </tr>
+  <tr>
+    <th>R$</th>
+    <td><%= @contract.price %></td>
+  </tr>
+  <tr>
+    <th>Endereço</th>
+    <td><%= @contract.address %></td>
+  </tr>
+  <tr>
+    <th>Equipamentos</th>
+    <td><li><%= @contract.equipment %></li></td>
+  </tr>
+</table>
+<%= link_to 'Voltar', contracts_path %>

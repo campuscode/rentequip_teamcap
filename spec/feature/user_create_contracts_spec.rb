@@ -16,8 +16,8 @@ feature 'user create contracts' do
     click_on 'Criar Contrato'
 
     expect(page).to have_content contract.customer
-    expect(page).to have_content contract.started_at
-    expect(page).to have_content contract.finished_at
+    expect(page).to have_content contract.started_at.strftime('%d/%m/%Y')
+    expect(page).to have_content contract.finished_at.strftime('%d/%m/%Y')
     expect(page).to have_content contract.price
     expect(page).to have_content contract.equipment
     expect(page).to have_content contract.address

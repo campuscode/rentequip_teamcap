@@ -15,6 +15,5 @@ feature 'user visit app' do
     expect(page).to have_content 'Início'
     expect(page).to have_content 'Fim'
     expect(page).to have_content 'Valor'
-    expect(page).to have_content 'Endereço'
   end
 end
