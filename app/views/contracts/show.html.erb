@@ -27,7 +27,9 @@
   </tr>
   <tr>
     <th>Equipamentos</th>
-    <td><li><%= @contract.equipment %></li></td>
+    <td><% @contract.equipment.each do |e| %>
+      <%= e.name %>
+    <% end %></td>
   </tr>
 </table>
 <%= link_to 'Voltar', contracts_path %>

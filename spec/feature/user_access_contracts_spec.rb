@@ -2,8 +2,17 @@ require 'rails_helper'
 
 feature 'User access contracts' do
   scenario 'successfully' do
-    contracts = []
-    3.times { contracts << create(:contract) }
+
+    contract = create(:contract)
+
+    visit contracts_path
+
+    expect(page).to have_content(contract.started_at.strftime('%d/%m/%Y'))
+    expect(page).to have_content(contract.finished_at.strftime('%d/%m/%Y'))
+  end
+
+  scenario 'see all contracts' do
+    contracts = create_list(:contract, 3)
 
     visit contracts_path
 
