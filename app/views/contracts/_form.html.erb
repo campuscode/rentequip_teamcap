@@ -1,6 +1,7 @@
 <section>
   <h1>Contract</h1>
-  <%= form_for @contract do |f| %>
+  <%= flash[:error] %>
+  <p><%= form_for @contract do |f| %></p>
     <div class="form-group">
       <%= f.label :customer %>
       <%= f.text_field :customer, class: 'form-control' %>
@@ -33,4 +34,5 @@
       <%= f.submit 'Criar Contrato' %>
     </div>
   <% end %>
+
 </section>
