@@ -4,14 +4,12 @@ feature 'user view equipment list' do
   scenario 'successfully' do
     equipment = create(:equipment)
 
-    equipment2 = create(:equipment, name: 'Furadeira', price: 'R$200,00')
+    equipment2 = create(:equipment, name: 'Furadeira')
 
     visit equipment_index_path
 
     expect(page).to have_content(equipment.name)
-    expect(page).to have_content(equipment.price)
     expect(page).to have_content(equipment2.name)
-    expect(page).to have_content(equipment2.price)
   end
 
   scenario 'user view equipment detail' do
@@ -20,7 +18,6 @@ feature 'user view equipment list' do
     visit equipment_path equipment
 
     expect(page).to have_content(equipment.name)
-    expect(page).to have_content(equipment.price)
   end
 
   scenario 'user do not see equipment' do

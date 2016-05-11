@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'user create contracts' do
   scenario 'successfully' do
-    equipment1 = Equipment.create(name: 'Furadeira', price: 'R$200,00')
-    equipment2 = Equipment.create(name: 'Betoneira', price: 'R$2100,00')
+    equipment1 = Equipment.create(name: 'Furadeira')
+    equipment2 = Equipment.create(name: 'Betoneira')
 
     contract = Contract.new(customer: 'Diego',
                             started_at: Time.zone.today,

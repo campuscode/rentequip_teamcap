@@ -1,7 +1,5 @@
 class Price < ActiveRecord::Base
   belongs_to :equipment
 
-  def amount
-    value * deadline
-  end
+  validates :equipment, :value, :deadline, presence: true
 end

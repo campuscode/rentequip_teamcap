@@ -15,10 +15,10 @@ feature 'User sees equipment price table by deadline' do
     within('table') do
       expect(page).to have_content(trator_price.equipment.name)
       expect(page).to have_content(trator_price.deadline)
-      expect(page).to have_content(trator_price.amount)
+      expect(page).to have_content(trator_price.value)
       expect(page).to have_content(furadeira_price.equipment.name)
       expect(page).to have_content(furadeira_price.deadline)
-      expect(page).to have_content(furadeira_price.amount)
+      expect(page).to have_content(furadeira_price.value)
     end
   end
 

@@ -1,0 +1,14 @@
+<table class='table table-striped'>
+  <tr>
+    <th width='20%'>Equipamento</th>
+    <td><%= @price.equipment.name %></td>
+  </tr>
+    <th>Prazo</th>
+    <td><%= @price.deadline %></td>
+  </tr>
+  <tr>
+    <th>Valor</th>
+    <td><%= number_to_currency(@price.value, unit: 'R$ ', delimiter: '.', separator: ',') %></td>
+  </tr>
+</table>
+<%= link_to 'Voltar', prices_path %>
