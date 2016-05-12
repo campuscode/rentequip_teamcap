@@ -24,6 +24,23 @@ class PricesController < ApplicationController
     @price = Price.find(params[:id])
   end
 
+  def edit
+    @price = Price.find(params[:id])
+  end
+
+  def update
+    @price = Price.find(params[:id])
+
+
+    if @price.update(price_params)
+      redirect_to @price
+    else
+      @equipment = Equipment.all
+      flash[:errors] = @price.errors.full_messages
+      render :edit
+    end
+  end
+
   private
 
   def price_params

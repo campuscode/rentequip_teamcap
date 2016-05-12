@@ -1,4 +1,4 @@
-feature 'User sees equipment price table by deadline' do
+feature 'User access price table' do
   scenario 'successfully' do
     trator    = create(:equipment, name: 'Trator')
     furadeira = create(:equipment, name: 'Furadeira')
@@ -11,6 +11,8 @@ feature 'User sees equipment price table by deadline' do
     within('.prices h1') do
       expect(page).to have_content('Tabela de Preços')
     end
+
+    expect(page).to have_content('Novo Valor')
 
     within('table') do
       expect(page).to have_content(trator_price.equipment.name)
