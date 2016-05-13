@@ -1,0 +1,9 @@
+<div class="form-group">
+  <% if flash[:error] %>
+    <ul>
+    <% flash[:error].each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>

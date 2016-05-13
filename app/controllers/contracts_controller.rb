@@ -10,7 +10,7 @@ class ContractsController < ApplicationController
       redirect_to @contract
     else
       @equipment = Equipment.all
-      flash[:error] = 'Todos os campos são obrigatórios'
+      flash[:error] = @contract.errors.full_messages
       render :new
     end
   end

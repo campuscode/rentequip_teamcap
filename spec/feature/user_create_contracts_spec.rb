@@ -35,6 +35,11 @@ feature 'user create contracts' do
 
     click_on 'Criar Contrato'
 
-    expect(page).to have_content 'Todos os campos são obrigatórios'
+    expect(page).to have_content('Customer can\'t be blank')
+    expect(page).to have_content('Started at can\'t be blank')
+    expect(page).to have_content('Finished at can\'t be blank')
+    expect(page).to have_content('Price can\'t be blank')
+    expect(page).to have_content('Address can\'t be blank')
+    expect(page).to have_content('Contact can\'t be blank')
   end
 end

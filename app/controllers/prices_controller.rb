@@ -15,7 +15,7 @@ class PricesController < ApplicationController
       redirect_to @price
     else
       @equipment = Equipment.all
-      flash[:errors] = @price.errors.full_messages
+      flash[:error] = @price.errors.full_messages
       render :new
     end
   end
@@ -31,12 +31,11 @@ class PricesController < ApplicationController
   def update
     @price = Price.find(params[:id])
 
-
     if @price.update(price_params)
       redirect_to @price
     else
       @equipment = Equipment.all
-      flash[:errors] = @price.errors.full_messages
+      flash[:error] = @price.errors.full_messages
       render :edit
     end
   end

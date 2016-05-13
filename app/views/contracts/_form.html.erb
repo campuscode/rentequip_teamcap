@@ -1,6 +1,6 @@
 <section>
   <h1>Contract</h1>
-  <%= flash[:error] %>
+  <%= render 'errors' %>
   <p><%= form_for @contract do |f| %></p>
     <div class="form-group">
       <%= f.label :customer %>

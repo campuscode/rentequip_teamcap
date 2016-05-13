@@ -1,0 +1,20 @@
+<%= render 'errors' %>
+
+<%= simple_form_for @equipment do |f| %>
+  <div class="form-group">
+    <%= f.input :name, label: 'Tipo do equipamento', class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :serial_number, label: 'Número serial', class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :brand, label: 'Marca', class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :supplier, label: 'Fornecedor', class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :notes, label: 'Observações', class: "form-control", as: :text  %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,14 +1,5 @@
 <h2> Cadastro de Preço </h2>
-
-<div class="form-group">
-  <% if flash[:errors] %>
-    <ul>
-    <% flash[:errors].each do |error_message| %>
-      <li><%= error_message %></li>
-    <% end %>
-    </ul>
-  <% end %>
-</div>
+<%= render 'errors' %>
 
 <%= simple_form_for @price do |f| %>
   <div class="form-group">

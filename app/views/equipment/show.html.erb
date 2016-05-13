@@ -1,1 +1,21 @@
-<h1><%= @equipment.name %></h1>
+<h3><%= @equipment.name %></h3>
+
+<table class='table table-striped'>
+  <tr>
+    <th width='20%'>Número de Registro</th>
+    <td><%= @equipment.serial_number %></td>
+  </tr>
+  <tr>
+    <th>Marca</th>
+    <td><%= @equipment.brand %></td>
+  </tr>
+  <tr>
+    <th>Fornecedor</th>
+    <td><%= @equipment.supplier %></td>
+  </tr>
+  <tr>
+    <th>Observações</th>
+    <td><%= @equipment.notes %></td>
+  </tr>
+</table>
+<%= link_to 'Voltar', equipment_index_path %>
