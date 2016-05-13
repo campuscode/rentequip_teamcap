@@ -9,7 +9,7 @@ feature 'user create company' do
                           phone: '282836739',
                           company_name: 'Campus Code LTDA',
                           contact: 'Zardini'
-                          )
+                         )
 
     visit new_company_path
 
@@ -18,7 +18,7 @@ feature 'user create company' do
     fill_in 'Address',        with: company.address
     fill_in 'Mail',           with: company.mail
     fill_in 'Phone',          with: company.phone
-    fill_in 'Company_name',   with: company.company_name
+    fill_in 'Company name',   with: company.company_name
     fill_in 'Contact',        with: company.contact
 
     click_on 'Criar Empresa'
@@ -38,6 +38,5 @@ feature 'user create company' do
     click_on 'Criar Empresa'
 
     expect(page).to have_content 'Todos os campos são obrigatórios'
-    
   end
 end
