@@ -2,6 +2,8 @@ Documentation:
   Enabled: false
 Style/MultilineOperationIndentation:
   EnforcedStyle: indented
+Rails/HasAndBelongsToMany:
+  Enabled: false 
 Rails:
   Enabled: true
 Style/FrozenStringLiteralComment:

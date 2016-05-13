@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :contracts, only:[:show, :new, :create, :index]
   resources :equipment, only: [:index, :show]
   resources :prices, only: [:index, :new, :create, :show]
+  resources :companies, only: [:new, :create, :show, :index]
 end
