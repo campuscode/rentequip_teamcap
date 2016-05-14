@@ -1,0 +1,13 @@
+<h3>Recibo de Entrega</h3>
+
+<h2>São Paulo, <%= @receipt.created_at %></h2>
+
+<p>Eu, <%= @receipt.contract.contact %>sáv el), em nomedae <%= @receipt.contract.customer %>r
+  azãosoci al ),in <%= @receipt.contract.customer %> ....... ... ....decl ar oterrecebido</p>
+<ul>
+  <%= @receipt.contract.equipment.each do |equipment|m %
+    <li><%= equipment.name %></li>
+  <% end %>>
+</ul>
+<p>pelo período de <%= @receipt.started_at %> à <%= @receipt.finished_at %> em perfeitas condições de uso no endereço <%= @receipt.contract.address %>
+  no dia <%= @receipt.created_at %> de acordo com o contrato <%= @receipt.contract.id %>.</p>
