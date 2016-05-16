@@ -11,6 +11,7 @@ feature 'user create contracts' do
 
     fill_in 'Customer',      with: contract.customer
     fill_in 'Started at',    with: contract.started_at
+    select  [3,7,15,30],     from: contract.deadline
     fill_in 'Finished at',   with: contract.finished_at
     fill_in 'Price',         with: contract.price
     check equipment1.name
@@ -22,6 +23,7 @@ feature 'user create contracts' do
 
     expect(page).to have_content contract.customer
     expect(page).to have_content contract.started_at.strftime('%d/%m/%Y')
+    expect(page).to have_content contract.deadline
     expect(page).to have_content contract.finished_at.strftime('%d/%m/%Y')
     expect(page).to have_content contract.price
     expect(page).to have_content equipment1.name
