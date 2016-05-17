@@ -5,8 +5,12 @@
     <th>Cliente</th>
     <th>Início</th>
     <th>Fim</th>
+    <th>Prazo</th>
     <th>Valor</th>
+    <th></th>
   </tr>
-  <%= render @contracts if @contracts %>
+  <% @contracts.each do |contract| %>
+    <%= render contract %>
+  <% end %>
   <%= render partial: 'no_data', locals: { model: 'Contrato', columns: 5 } if @contracts.blank? %>
 </table>

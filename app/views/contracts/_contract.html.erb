@@ -3,5 +3,7 @@
   <td><%= contract.customer %></td>
   <td><%= date_to_human(contract.started_at) %></td>
   <td><%= date_to_human(contract.finished_at) %></td>
+  <td><%= contract.deadline %></td>
   <td><%= contract.price %></td>
+  <td><%= link_to 'Ver detalhes', contract %></td>
 </tr>
