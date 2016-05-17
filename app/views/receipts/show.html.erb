@@ -1,0 +1,10 @@
+<h3>Recibo de Entrega</h3>
+
+<h2>São Paulo, <%= @receipt.created_at.strftime('%d de %B de %Y') %></h2>
+
+<p>Eu, <%= @receipt.contract.contact %>, em nome da empresa <%= @receipt.contract.customer %>,
+  inscrita no CNPJ <%= @receipt.contract.customer %> declaro ter recebido os equipamentos
+  <em><%= @receipt.contract.equipment.map(&:name).join(', ') %></em>
+  pelo período de <%= @receipt.contract.started_at %> à <%= @receipt.contract.finished_at %>
+  em perfeitas condições de uso no endereço <%= @receipt.contract.address %>
+  no dia <%= @receipt.created_at %> de acordo com o contrato nº <%= @receipt.contract.id %>.</p>
