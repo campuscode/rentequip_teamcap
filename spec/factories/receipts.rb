@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :receipt do
-    association :contract
-    goal "entrega"
+    contract
+    type 'DeliveryReceipt'
   end
 end

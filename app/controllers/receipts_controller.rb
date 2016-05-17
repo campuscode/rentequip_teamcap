@@ -1,13 +1,18 @@
 class ReceiptsController < ApplicationController
-  def create
-    @contract = Contract.find(params[:contract_id])
+  before_action :set_contract
 
-    @receipt = @contract.delivery_receipt || @contract.create_delivery_receipt(goal: 'delivery')
-
-    redirect_to receipt_path(@receipt)
+  def create_delivery_receipt
+    @contract.create_delivery_receipt
+    redirect_to delivery_receipt_contract_path(@contract)
   end
 
-  def show
-    @receipt = Receipt.find(params[:id])
+  def show_delivery_receipt
+    @receipt = @contract.delivery_receipt
+  end
+
+  private
+
+  def set_contract
+    @contract = Contract.find(params[:id])
   end
 end

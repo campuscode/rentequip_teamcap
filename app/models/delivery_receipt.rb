@@ -1,0 +1,2 @@
+class DeliveryReceipt < Receipt
+end

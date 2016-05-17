@@ -1,5 +1,5 @@
 class Contract < ActiveRecord::Base
-  has_one :delivery_receipt, -> { where(goal: 'delivery') }, class_name: 'Receipt'
+  has_one :delivery_receipt
 
   has_and_belongs_to_many :equipment
   validates :customer, :started_at, :price, :address,

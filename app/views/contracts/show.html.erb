@@ -27,11 +27,18 @@
   </tr>
   <tr>
     <th>Equipamentos</th>
-    <td><% @contract.equipment.each do |e| %>
-      <%= e.name %>
-    <% end %></td>
+    <td>
+      <dl>
+        <% @contract.equipment.each do |e| %>
+          <dd>&bull; <%= e.name %></dd>
+        <% end %>
+      </dl>
+    </td>
   </tr>
 </table>
-<%= link_to 'Recibo de entrega', contract_receipts_path(@contract), method: :post %>
 
-<%= link_to 'Voltar', contracts_path %>
+<div class="pull-right">
+  <%= link_to 'Recibo de entrega', delivery_receipt_contract_path(@contract), method: :post, class: 'btn btn-info' %>
+</div>
+
+<%= link_to 'Voltar', contracts_path, class: 'btn btn-info' %>
