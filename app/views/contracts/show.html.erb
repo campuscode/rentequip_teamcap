@@ -29,7 +29,8 @@
     <th>Equipamentos</th>
     <td><% @contract.equipment.each do |e| %>
       <%= e.name %>
-    <% end %></td>
+      <% end %>
+    </td>
   </tr>
 </table>
 <%= link_to 'Recibo de entrega', contract_receipts_path(@contract), method: :post %>
