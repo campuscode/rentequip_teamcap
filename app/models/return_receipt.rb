@@ -1,0 +1,2 @@
+class ReturnReceipt < Receipt
+end

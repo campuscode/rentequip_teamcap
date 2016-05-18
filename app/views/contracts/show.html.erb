@@ -38,7 +38,8 @@
 </table>
 
 <div class="pull-right">
-  <%= link_to 'Recibo de entrega', delivery_receipt_contract_path(@contract), method: :post, class: 'btn btn-info' %>
+  <%= link_to 'Recibo de entrega', delivery_receipt_contract_path(@contract), method: :post, class: 'btn btn-info' if @contract.delivery_receipt.blank? %>
+  <%= link_to 'Recibo de devolução', return_receipt_contract_path(@contract), method: :post, class: 'btn btn-info' unless @contract.delivery_receipt.blank? %>
 </div>
 
 <%= link_to 'Voltar', contracts_path, class: 'btn btn-info' %>

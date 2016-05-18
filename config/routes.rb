@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :contracts, only:[:show, :new, :create, :index] do
     member do
       post :delivery_receipt, to: 'receipts#create_delivery_receipt'
-      get :delivery_receipt,  to: 'receipts#show_delivery_receipt'
+      get  :delivery_receipt, to: 'receipts#show_delivery_receipt'
+      post :return_receipt,   to: 'receipts#create_return_receipt'
+      get  :return_receipt,   to: 'receipts#show_return_receipt'
     end
   end
 

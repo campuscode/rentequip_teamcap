@@ -1,5 +1,6 @@
 class Contract < ActiveRecord::Base
   has_one :delivery_receipt
+  has_one :return_receipt
 
   has_and_belongs_to_many :equipment
   validates :customer, :started_at, :price, :address,
