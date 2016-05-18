@@ -10,6 +10,15 @@ class ReceiptsController < ApplicationController
     @receipt = @contract.delivery_receipt
   end
 
+  def create_return_receipt
+    @contract.create_return_receipt
+    redirect_to return_receipt_contract_path(@contract)
+  end
+
+  def show_return_receipt
+    @receipt = @contract.return_receipt
+  end
+
   private
 
   def set_contract
