@@ -9,21 +9,22 @@ feature 'user create contracts' do
 
     visit new_contract_path
 
-    fill_in 'Customer',        with: contract.customer
-    fill_in 'Started at',      with: contract.started_at
+    fill_in 'Cliente',         with: contract.customer
+    fill_in 'Início',          with: contract.started_at
     select  contract.deadline, from: 'Deadline'
-    fill_in 'Price',           with: contract.price
+    fill_in 'Preço',           with: contract.price
     check equipment1.name
     check equipment2.name
-    fill_in 'Address',         with: contract.address
-    fill_in 'Contact',         with: contract.contact
+    fill_in 'Endereço',        with: contract.address
+    fill_in 'Contato',         with: contract.contact
 
     click_on 'Criar Contrato'
 
     expect(page).to have_content contract.customer
     expect(page).to have_content contract.started_at.strftime('%d/%m/%Y')
     expect(page).to have_content contract.deadline
-    expect(page).to have_content (contract.started_at + contract.deadline).strftime('%d/%m/%Y')
+    expect(page).to have_content
+    (contract.started_at + contract.deadline).strftime('%d/%m/%Y')
     expect(page).to have_content contract.price
     expect(page).to have_content equipment1.name
     expect(page).to have_content equipment2.name
