@@ -8,3 +8,5 @@
   pelo período de <%= @receipt.contract.started_at %> à <%= @receipt.contract.finished_at %>
   em perfeitas condições de uso no endereço <%= @receipt.contract.address %>
   no dia <%= @receipt.created_at %> de acordo com o contrato nº <%= @receipt.contract.id %>.</p>
+
+<%= link_to 'Voltar', @contract %>

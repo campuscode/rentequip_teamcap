@@ -34,5 +34,7 @@ feature 'User issue return receipt' do
       da empresa #{contract.customer}, inscrita no CNPJ 123456789 no dia
       #{delivery_receipt.created_at}.")
     end
+
+    expect(page).to have_content('Voltar')
   end
 end

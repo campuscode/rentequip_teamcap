@@ -24,5 +24,7 @@ feature 'User issue delivery receipts' do
         #{contract.delivery_receipt.created_at} de acordo com o contrato nº
         #{contract.id}.")
     end
+
+    expect(page).to have_content('Voltar')
   end
 end
