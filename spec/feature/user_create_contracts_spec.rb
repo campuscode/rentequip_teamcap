@@ -11,7 +11,7 @@ feature 'user create contracts' do
 
     fill_in 'Cliente',         with: contract.customer
     fill_in 'Início',          with: contract.started_at
-    select  contract.deadline, from: 'Deadline'
+    select  contract.deadline, from: 'Prazo'
     fill_in 'Preço',           with: contract.price
     check equipment1.name
     check equipment2.name

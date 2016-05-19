@@ -6,7 +6,7 @@
 
       <%= f.input :started_at, label: 'Início', class: 'form-control', as: :string %>
 
-      <%= f.input :deadline, collection: Contract::DEADLINE, class: 'form-control' %>
+      <%= f.input :deadline, label: 'Prazo', collection: Contract::DEADLINE, class: 'form-control' %>
 
       <%= f.input :price, label: 'Preço', class: 'form-control' %>
 

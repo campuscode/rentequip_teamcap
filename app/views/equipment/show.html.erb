@@ -1,23 +1,24 @@
 <h1 ><%= @equipment.name %></h1>
 
-<table class='table table-striped'>
-  <tr>
-    <th width='20%'>Número de Registro</th>
-    <td ><%= @equipment.serial_number %></td>
-  </tr>
-  <tr>
-    <th>Marca</th>
-    <td><%= @equipment.brand %></td>
-  </tr>
-  <tr>
-    <th>Fornecedor</th>
-    <td><%= @equipment.supplier %></td>
-  </tr>
-  <tr>
-    <th>Observações</th>
-    <td><%= @equipment.notes %></td>
-  </tr>
-</table>
+<dl class='dl-horizontal'>
+  <p>
+    <dt width='20%'>Número de Registro:</dt>
+    <dd ><%= @equipment.serial_number %></dd>
+  </p>
+  <p>
+    <dt>Marca:</dt>
+    <dd><%= @equipment.brand %></dd>
+  </p>
+  <p>
+    <dt>Fornecedor:</dt>
+    <dd><%= @equipment.supplier %></dd>
+  </p>
+  <p>
+    <dt>Observações:</dt>
+    <dd><%= @equipment.notes %></dd>
+  </p>
+</dl>
+<hr>
 <h2>Preços</h2>
 <table id='prices' class='table table-striped'>
   <tr>
