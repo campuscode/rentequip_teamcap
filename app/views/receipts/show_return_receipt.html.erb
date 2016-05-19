@@ -1,0 +1,9 @@
+<h1>Recibo de Devolução</h1>
+
+<h2>São Paulo, <%= @receipt.created_at.strftime('%d de %B de %Y') %></h2>
+
+<p>Eu, <%= @receipt.contract.contact %>, declaro ter recebido os equipamentos
+<em><%= @receipt.contract.equipment.map(&:name).join(', ') %></em> em devolução
+referente ao contrato nº <%= @receipt.contract.id %> em perfeitas condições da
+empresa <%= @receipt.contract.customer %>, inscrita no CNPJ 123456789 no dia
+<%= @receipt.created_at %>.</p>
