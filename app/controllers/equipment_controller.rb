@@ -5,6 +5,7 @@ class EquipmentController < ApplicationController
 
   def show
     @equipment = Equipment.find(params[:id])
+    @prices = Price.all
   end
 
   def new

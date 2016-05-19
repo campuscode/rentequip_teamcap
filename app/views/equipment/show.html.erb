@@ -1,9 +1,9 @@
-<h3><%= @equipment.name %></h3>
+<h1 ><%= @equipment.name %></h1>
 
 <table class='table table-striped'>
   <tr>
     <th width='20%'>Número de Registro</th>
-    <td><%= @equipment.serial_number %></td>
+    <td ><%= @equipment.serial_number %></td>
   </tr>
   <tr>
     <th>Marca</th>
@@ -17,5 +17,18 @@
     <th>Observações</th>
     <td><%= @equipment.notes %></td>
   </tr>
+</table>
+<h2>Preços</h2>
+<table id='prices' class='table table-striped'>
+  <tr>
+    <th>Prazo</th>
+    <th>Preço</th>
+  </tr>
+  <% @prices.each do |price| %>
+  <tr>
+    <td><%= price.deadline %></td>
+    <td><%= price.value %></td>
+  </tr>
+  <% end %>
 </table>
 <%= link_to 'Voltar', equipment_index_path %>

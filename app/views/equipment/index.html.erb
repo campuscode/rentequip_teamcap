@@ -3,14 +3,13 @@
   <table class='table table-striped table-bordered table-hover'>
     <tr>
       <th>Nome</th>
-      <th>Preço</th>
     </tr>
     <tr>
       <% if @equipment.empty? %>
         <td colspan="2"><%= flash[:alert] = 'Não há equipamentos cadastrados' %></td>
       <% else %>
         <% @equipment.each do |equipment| %>
-            <td><%= equipment.name %></td>
+            <td><%= link_to equipment.name, equipment %></td>
         <% end %>
       <% end %>
     </tr>
