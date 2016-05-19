@@ -9,10 +9,11 @@ feature 'user create contracts' do
 
     visit new_contract_path
 
+    expect(page).not_to have_content('Preço')
+
     fill_in 'Cliente',         with: contract.customer
     fill_in 'Início',          with: contract.started_at
-    select  contract.deadline, from: 'Prazo'
-    fill_in 'Preço',           with: contract.price
+    select  contract.deadline, from: 'Deadline'
     check equipment1.name
     check equipment2.name
     fill_in 'Endereço',        with: contract.address
@@ -30,6 +31,7 @@ feature 'user create contracts' do
     expect(page).to have_content equipment2.name
     expect(page).to have_content contract.address
     expect(page).to have_content contract.contact
+    expect(page).to have_content contract.amount
   end
 
   scenario 'user create contract and failed' do

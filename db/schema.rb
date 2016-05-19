@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517005643) do
+ActiveRecord::Schema.define(version: 20160518234802) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160517005643) do
   create_table "contracts_equipment", id: false, force: :cascade do |t|
     t.integer "contract_id",  null: false
     t.integer "equipment_id", null: false
+    t.float   "value"
   end
 
   add_index "contracts_equipment", ["contract_id", "equipment_id"], name: "index_contracts_equipment_on_contract_id_and_equipment_id"
