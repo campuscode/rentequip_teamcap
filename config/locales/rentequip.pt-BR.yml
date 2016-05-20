@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      equipment: Equipamento
+      contract: Contrato
+      price: Preço
+      company: Empresa
+      
+    attributes:
+      equipment:
+        name: Nome

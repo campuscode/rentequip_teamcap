@@ -11,7 +11,7 @@ feature 'User creates prices' do
     select prazo
     select equipment.name
 
-    click_on 'Create Price'
+    click_on 'Criar Preço'
 
     expect(page).to have_content(equipment.name)
     expect(page).to have_content(prazo)
@@ -20,7 +20,7 @@ feature 'User creates prices' do
 
   scenario 'fail' do
     visit new_price_path
-    click_on 'Create Price'
+    click_on 'Criar Preço'
 
     expect(page).to have_content('Equipment can\'t be blank')
     expect(page).to have_content('Value can\'t be blank')
@@ -32,7 +32,7 @@ feature 'User creates prices' do
     prazo = [3, 7, 30].sample
     visit edit_price_path price
     select prazo
-    click_on 'Update Price'
+    click_on 'Atualizar Preço'
 
     expect(page).to have_content(prazo)
   end

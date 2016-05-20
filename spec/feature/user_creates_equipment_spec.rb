@@ -11,7 +11,7 @@ feature 'User creates equipment' do
     fill_in 'Observações', with: 'Qui corrupti est quisquam. Facere animi quod
     aut. Qui nulla consequuntur consectetur sapiente.'
 
-    click_on 'Create Equipment'
+    click_on 'Criar Equipamento'
 
     expect(page).to have_content('Parafusadeira')
     expect(page).to have_content('5D4F5S4F')
@@ -24,9 +24,9 @@ feature 'User creates equipment' do
   scenario 'fail' do
     visit new_equipment_path
 
-    click_on 'Create Equipment'
+    click_on 'Criar Equipamento'
 
-    expect(page).to have_content('Name can\'t be blank')
+    expect(page).to have_content('Nome não pode ficar em branco')
   end
 
   scenario 'edit' do

@@ -20,7 +20,7 @@
 </dl>
 <hr>
 <h2>Preços</h2>
-<table id='prices' class='table table-striped'>
+<table id='prices' class='table table-bordered'>
   <tr>
     <th>Prazo</th>
     <th>Preço</th>
@@ -28,7 +28,7 @@
   <% @prices.each do |price| %>
   <tr>
     <td><%= price.deadline %></td>
-    <td><%= price.value %></td>
+    <td><%= number_to_currency price.value %></td>
   </tr>
   <% end %>
 </table>

@@ -6,15 +6,16 @@
       <th>Nome</th>
       <th>Marca</th>
     </tr>
-    <tr>
       <% if @equipment.empty? %>
-        <td colspan="2"><%= flash[:alert] = 'Não há equipamentos cadastrados' %>
-        </td>
+      <tr>
+        <td colspan="2"><%= flash[:alert] = 'Não há equipamentos cadastrados' %></td>
+      </tr>
       <% else %>
         <% @equipment.each do |equipment| %>
+          <tr>
             <td><%= link_to equipment.name, equipment %></td>
             <td><%= equipment.brand %></td>
+          </tr>
         <% end %>
       <% end %>
-    </tr>
   </table>
