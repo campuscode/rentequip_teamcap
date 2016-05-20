@@ -14,9 +14,14 @@ class Contract < ActiveRecord::Base
 =======
   DEADLINE = [3,7,15,30]
 
+<<<<<<< HEAD
   before_save :calculate_contract_end
   after_save :set_price
 >>>>>>> Calculate value of the contract
+=======
+  before_create :calculate_contract_end
+  after_create :set_price
+>>>>>>> Auto-Calculate contract total price
 
   protected
 
@@ -28,7 +33,12 @@ class Contract < ActiveRecord::Base
   end
 
   def set_price
+<<<<<<< HEAD
     self.price = ContractsEquipment.where(contract: self, equipment: self.equipment).first.value
 >>>>>>> Calculate value of the contract
+=======
+    price = contracts_equipment.sum(:value)
+    self.update_attribute(:price, price)
+>>>>>>> Auto-Calculate contract total price
   end
 end

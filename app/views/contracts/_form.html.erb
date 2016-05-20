@@ -8,7 +8,7 @@
 
       <%= f.input :deadline, label: 'Prazo', collection: Contract::DEADLINE, class: 'form-control' %>
 
-      <%= f.input :price, label: 'Preço', class: 'form-control' %>
+      <%= f.input :price, label: 'Preço', class: 'form-control' if @contract.persisted?  %>
 
       <%= f.association :equipment, as: :check_boxes, label: 'Equipamentos', class: 'form-control' %>
 
